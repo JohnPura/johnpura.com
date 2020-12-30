@@ -1,39 +1,5 @@
-/*@import url('reset.css');*/
-@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;300&display=swap');
-
-/*
-:root {
-    --bs-blue: #0d6efd;
-    --bs-indigo: #6610f2;
-    --bs-purple: #6f42c1;
-    --bs-pink: #d63384;
-    --bs-red: #dc3545;
-    --bs-orange: #fd7e14;
-    --bs-yellow: #ffc107;
-    --bs-green: #198754;
-    --bs-teal: #20c997;
-    --bs-cyan: #0dcaf0;
-    --bs-white: #fff;
-    --bs-gray: #6c757d;
-    --bs-gray-dark: #343a40;
-    --bs-primary: #0d6efd;
-    --bs-secondary: #6c757d;
-    --bs-success: #198754;
-    --bs-info: #0dcaf0;
-    --bs-warning: #ffc107;
-    --bs-danger: #dc3545;
-    --bs-light: #f8f9fa;
-    --bs-dark: #212529;
-
-    --
-
-    --bs-font-sans-serif: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-    --bs-font-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-
-    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-}
-*/
-
+@import url('reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;300&family=Architects+Daughter&display=swap');
 
 /**
 * Base styles
@@ -45,7 +11,8 @@
 }
 
 html {
-  background: url('img/volcano.jpg') no-repeat center center fixed;
+  min-height: 100%;
+  background: url('/img/volcano.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -54,6 +21,7 @@ html {
 
 body {
   font-family: 'Gothic A1', sans-serif;
+  color: #eceff1;
 }
 
 img {
@@ -63,25 +31,144 @@ img {
 /**
 * Navigation
 */
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background-color: #003d00;
+}
+
 nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 8vh;
-  background-color: ;
+  width: 37%;
 }
 
-.site-nav-item {
+nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #eceff1;
+  transition: border-bottom .6s ease-in-out;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+  border-bottom: 2px solid #eceff1;
+}
+
+.nav-item {
+  font-weight: 800;
+  font-size: .9rem;
+  letter-spacing: 2.5px;
+  padding: 5px;
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+/**
+* Mobile navigation
+*/
+.mobile-nav  {
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-nav div {
+  width: 30px;
+  height: 2px;
+  background-color: #eceff1;
+  margin: 7px;
+  transition: all 0.4s ease;
+}
+
+@media screen and (max-width:1180px) {
+  nav {
+    width: 47%;
+  }
+}
+
+@media screen and (max-width:960px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  nav {
+    position: absolute;
+    right: 0;
+    height: 90vh;
+    top: 10vh;
+    background-color: #33691e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    transform: translateX(100%);
+  }
+
+  .nav-item {
+    opacity: 0;
+  }
+
+  .mobile-nav {
+    display: block;
+  }
 
 }
 
 /**
-* Logo/Brand
+* Close icon
 */
-.site-logo {
+.close .top {
+  transform: rotate(-45deg) translate(-7px,6px);
+}
 
+.close .middle {
+  opacity: 0;
+}
+
+.close .bottom {
+  transform: rotate(45deg) translate(-7px,-6px);
+}
+
+/**
+* Logo
+*/
+.logo a {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 2.65rem;
+  letter-spacing: 3px;
+  text-decoration: none;
+  color: #eceff1;
 }
 
 /**
 * Footer styles
+*/
+
+/**
+- Colors
+
+33691e - primary
+003d00 - dark
+629749 - light
+
+003d00 - light text
+000a12 - dark text
+
 */
