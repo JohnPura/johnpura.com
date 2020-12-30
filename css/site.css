@@ -36,7 +36,7 @@ header {
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background-color: #003d00;
+  background-color: #34515e;
 }
 
 nav {
@@ -113,7 +113,7 @@ nav a:hover {
     right: 0;
     height: 90vh;
     top: 10vh;
-    background-color: #33691e;
+    background-color: #29434e;
     display: flex;
     flex-direction: column;
     align-items: center;
